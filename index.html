@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Land Measure BD — Bangladesh Land Unit Converter</title>
+<meta name="description" content="Offline bilingual EN/বাংলা Bangladesh land measurement tool: convert decimal, katha, bigha, acre, hectare; plot area calculator; land price estimator.">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <h1 id="t-title">🏡 Land Measure BD</h1>
+    <p class="sub" id="t-subtitle">Bangladesh land units — decimal, katha, bigha, acre &amp; more</p>
+    <button id="langBtn" class="lang" type="button">বাংলা</button>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="card" id="sec-convert">
+    <h2 id="t-conv-h">1 · Unit Converter</h2>
+    <div class="row">
+      <label><span id="t-amount">Amount</span>
+        <input id="convValue" type="number" min="0" step="any" placeholder="e.g. 5" inputmode="decimal">
+      </label>
+      <label><span id="t-unit">Unit</span>
+        <select id="convUnit"></select>
+      </label>
+      <button id="convBtn" class="primary" type="button"><span id="t-convert">Convert</span></button>
+    </div>
+    <p class="err" id="convErr" hidden></p>
+    <div id="convResults" class="results" hidden></div>
+    <p class="hint" id="t-conv-hint">Enter a positive number and pick a unit.</p>
+  </section>
+
+  <section class="card" id="sec-plot">
+    <h2 id="t-plot-h">2 · Plot Area Calculator</h2>
+    <div class="row">
+      <label><span id="t-length">Length (feet)</span>
+        <input id="plotLength" type="number" min="0" step="any" placeholder="e.g. 60" inputmode="decimal">
+      </label>
+      <label><span id="t-width">Width (feet)</span>
+        <input id="plotWidth" type="number" min="0" step="any" placeholder="e.g. 40" inputmode="decimal">
+      </label>
+      <button id="plotBtn" class="primary" type="button"><span id="t-calc">Calculate</span></button>
+    </div>
+    <p class="err" id="plotErr" hidden></p>
+    <div id="plotResults" class="results" hidden></div>
+    <p class="hint" id="t-plot-hint">A rectangular plot: area = length × width.</p>
+  </section>
+
+  <section class="card" id="sec-price">
+    <h2 id="t-price-h">3 · Land Price Estimator</h2>
+    <div class="row">
+      <label><span id="t-area">Area</span>
+        <input id="priceArea" type="number" min="0" step="any" placeholder="e.g. 10" inputmode="decimal">
+      </label>
+      <label><span id="t-area-unit">Area unit</span>
+        <select id="priceAreaUnit"></select>
+      </label>
+    </div>
+    <div class="row">
+      <label><span id="t-rate">Price per unit (৳)</span>
+        <input id="priceRate" type="number" min="0" step="any" placeholder="e.g. 500000" inputmode="decimal">
+      </label>
+      <label><span id="t-rate-unit">Price unit</span>
+        <select id="priceRateUnit"></select>
+      </label>
+      <button id="priceBtn" class="primary" type="button"><span id="t-estimate">Estimate</span></button>
+    </div>
+    <p class="err" id="priceErr" hidden></p>
+    <div id="priceResults" class="results" hidden></div>
+    <p class="hint" id="t-price-hint">Total = area × rate, converted through square feet.</p>
+  </section>
+
+  <section class="card" id="sec-ref">
+    <h2 id="t-ref-h">4 · Standard Relations</h2>
+    <table class="ref">
+      <thead><tr><th id="t-ref-unit">Unit</th><th id="t-ref-sqft">Square feet</th><th id="t-ref-note">Note</th></tr></thead>
+      <tbody id="refBody"></tbody>
+    </table>
+  </section>
+
+  <p class="foot" id="t-foot">Fully offline — no data leaves your device. Standard Bangladesh units as commonly used in deeds and land records; local practice can vary (e.g. katha size differs in some areas), so verify against your deed before a transaction. Demo figures only — not legal or valuation advice.</p>
+</main>
+
+<script src="js/land.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
